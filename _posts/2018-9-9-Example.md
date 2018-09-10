@@ -2,7 +2,7 @@
 layout:       post
 title:        "Example"
 subtitle:     "example thing."
-date:         2018-9-10 20:57:10
+date:         2018-9-9 22:13:20
 author:       "garaguru"
 header-img:   "img/in-post/post-eleme-example/example.jpg"
 header-mask:  0.3
