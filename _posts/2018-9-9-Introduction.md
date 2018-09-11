@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "博客简介"
+title:        "博客简介/Introduction"
 subtitle:     "An Introduction of This Blog"
 date:         2018-9-9 22:13:20
 author:       "garaguru"
