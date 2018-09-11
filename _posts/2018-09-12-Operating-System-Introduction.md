@@ -7,7 +7,6 @@ author:       "garaguru"
 header-img:   "img/in-post/post-eleme-example/example.jpg"
 header-mask:  0.3
 catalog:      true
-multilingual: true
 tags:
     - 操作系统
     - 计算机科学
