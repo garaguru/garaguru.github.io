@@ -4,7 +4,7 @@ title:        "操作系统-引论"
 subtitle:     "简单介绍操作系统相关的概念，主要介绍系统调用"
 date:         2018-09-12 20:57:10
 author:       "garaguru"
-header-img:   "img/in-post/post-eleme-example/example.jpg"
+header-img:   "img/default.jpg"
 header-mask:  0.3
 catalog:      true
 tags:
@@ -28,7 +28,7 @@ tags:
     - UID：每个进程都关联一个UID，这个UID是启动该进程的用户的UID，子进程的UID与父进程一样
     - PID：每个进程的唯一标识，PPID是该进程的父进程ID
 - 文件：
-    - mount系统调用允许把CD-ROM上的文件系统连接到程序所希望的 **根文件目录** 上
+    - mount系统调用允许把CD-ROM上的文件系统连接到程序所希望的 **根文件目录** 上 
     - UNIX中的特殊文件：使IO设备看起来像文件一般
        - 块特殊文件：可随机存取的块组成的设备，如磁盘
        - 字符特殊文件：接收或输出字符流的设备，如打印机

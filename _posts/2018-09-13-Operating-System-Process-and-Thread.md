@@ -4,7 +4,7 @@ title:        "操作系统-进程与线程"
 subtitle:     "深入剖析操作系统的进程与线程，包括进程与线程的实现、调度"
 date:         2018-09-13 22:35:34
 author:       "garaguru"
-header-img:   "img/in-post/post-eleme-example/example.jpg"
+header-img:   "img/default.jpg"
 header-mask:  0.3
 catalog:      true
 tags:
