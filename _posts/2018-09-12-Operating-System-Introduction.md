@@ -2,7 +2,7 @@
 layout:       post
 title:        "操作系统-引论"
 subtitle:     "简单介绍操作系统相关的概念，主要介绍系统调用"
-date:         2018-09-11 20:57:10
+date:         2018-09-12 20:57:10
 author:       "garaguru"
 header-img:   "img/in-post/post-eleme-example/example.jpg"
 header-mask:  0.3
