@@ -8,6 +8,9 @@ author: Garaguru
 tags: 操作系统
 ---
 
+* content
+{:toc}
+
 ## 操作系统的功能
 - 隐藏硬件，提供良好、清晰、优雅的抽象
 - 管理计算机资源
