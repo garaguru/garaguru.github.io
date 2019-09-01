@@ -1,15 +1,10 @@
 ---
-layout:       post
-title:        "操作系统-进程与线程"
-subtitle:     "深入剖析操作系统的进程与线程，包括进程与线程的实现、调度"
-date:         2018-09-13 22:35:34
-author:       "garaguru"
-header-img:   "img/default.jpg"
-header-mask:  0.3
-catalog:      true
-tags:
-    - 操作系统
-    - 计算机科学
+layout: post
+title: "操作系统-进程与线程"
+date: 2018-09-13 22:35:34
+categories: 操作系统
+author: Garaguru
+tags: 操作系统
 ---
 
 ## 进程（Process）

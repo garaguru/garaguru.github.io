@@ -1,98 +1,60 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
 # Site settings
-title: Garaguru Blog
-SEOTitle: Garaguru's Blog
-header-img: img/home-bg.jpg
-email: garaguru@gmail.com
-description: "Not only what you want."
-keyword: "aaa,bbb"
-url: "https://garaguru.github.io"              # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+title: Garaguru
+brief-intro: Just A Normal Student
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://garaguru.github.io" # the base hostname & protocol for your site
 
-# Publish posts or collection documents with a future date.
-future: true
+permalink: /:year/:month/:day/:title/
 
-# SNS settings
-RSS: false
-github_username:     garaguru
-#facebook_username:  huxpro
-#linkedin_username:  firstname-lastname-idxxxx
+# other links
+twitter_username: 
+facebook_username: #xxx
+github_username:  garaguru
+email: xinggwang@gmail.com
+weibo_username: #xxx
+zhihu_username: #xxx
+linkedIn_username: #xxx
+dribbble_username:
 
+description_footer: 此网站将用以记录平日所见所学
 
+# comments
+# two ways to comment, only choose one, and use your own short name
+# 两种评论插件，选一个就好了，使用自己的 short_name
+duoshuo_shortname: #
+disqus_shortname: garaguru #
+
+# statistic analysis 统计代码
+# 百度统计 id，将统计代码替换为自己的百度统计id，即
+# hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
+# xxxxx字符串
+baidu_tongji_id: 
+google_analytics_id: UA-125466511-1 # google 分析追踪id
 
 # Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-highlighter: rouge
-permalink: pretty
-paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-# If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN  
-
-
-
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-# make sure you have this gem installed
-# `$ gem install jekyll-paginate`
-plugins: [jekyll-paginate]
-
-
-
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
+
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+  input: GFM
+  syntax_highlighter: rouge
 
+# port
+# port: 1234
 
+# url
+category_dir: category/
+tag_dir: tag/
 
-# Disqus settings
-disqus_username: garaguru
+# excerpt
+excerpt_separator: "\n\n\n\n"
 
-# Netease settings
-netease_comment: false
-
-
-
-# Analytics settings
-# Baidu Analytics 
-# ba_track_id: [your track id]
-
-# Google Analytics
-ga_track_id: 'UA-125466511-1'            # Format: UA-xxxxxx-xx
-ga_domain: garaguru.github.io
-
-
-
-# Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Be simple."
-sidebar-avatar: /img/avatar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
-
-# Featured Tags
-featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
-
-
-
-# Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
-
-
-
-# Friends
-# friends: [
-#     {
-#        title: "example",
-#        href: "http://example.com"
-#     },{
-#         title: "example",
-#         href: "http://example.com"
-#     }
-# ]
+# paginate
+gems: [jekyll-paginate]
+paginate: 6
