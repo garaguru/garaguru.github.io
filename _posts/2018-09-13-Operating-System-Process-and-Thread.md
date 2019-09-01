@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "操作系统-进程与线程"
+excerpt: 介绍进程与线程相关概念
 date: 2018-09-13 22:35:34
 categories: 操作系统
 author: Garaguru
