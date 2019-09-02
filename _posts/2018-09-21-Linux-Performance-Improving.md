@@ -123,7 +123,7 @@ strace -e brk,mmap -f -p [pid]
 ```
 可以用于分析各个进程子线程的系统调用，每个系统调用的执行时间
 
-也可以指定只监控某些系统调用，比如mmap
+也可以指定只监控某些系统调用，比如 mmap
 
 **notice:** 这个命令对性能的影响非常大，尽量不要在现网执行
 
@@ -149,7 +149,7 @@ strace -e brk,mmap -f -p [pid]
 ```
 valgrind --tool=callgrind --separate-threads=yes ./testop -r -w -D -t 60
 ```
-让程序执行60秒后退出，将统计信息保存到callgrind.out.xxxx文件中，然后使用**KcacheGrind**分析
+让程序执行60秒后退出，将统计信息保存到 callgrind.out.xxxx 文件中，然后使用**KcacheGrind**分析
 
 ### 对函数堆栈进行快速分析
 pstack 打印程序的堆到文件
@@ -179,19 +179,19 @@ pt-pmp p
 - 内存耗尽，分配失败
 - 读写内存超越边界，尤其是对于栈上的局部变量数组
 - 内存泄露
-- malloc，free与new，delete混用
-- new [] 分配， delete释放
+- malloc，free 与new，delete 混用
+- new [] 分配， delete 释放
 - 变量没有初始化
 - 频繁的内存分配引起碎片和性能问题
 
 开发要求
-- 尽量避免手动管理指针，使用shared_ptr、unique_ptr等智能指针
+- 尽量避免手动管理指针，使用 shared_ptr、unique_ptr 等智能指针
 
 ### 内存诊断工具 - valgrind
 ```
 valgrind --tool=memcheck --leak-check=full --show-reachable-yes ./testperf -t120 >memeory.txt 2>&1
 ```
-最后打开memory.txt分析
+最后打开 memory.txt 分析
 
 ### 内存泄露定位 - mtrace
 - 编译时加上 -g 标记，如：`g++ a.cpp -g -o a.out`
@@ -220,19 +220,19 @@ Swap:            0B          0B          0B
 - available：应用真正能使用的内存，一般为free+cache中能被回收的内存
 
 ### 主动清理page cache
-查看脏页数量： cat /proc/vmstat | grep nr_dirty
+查看脏页数量： `cat /proc/vmstat | grep nr_dirty`
 
-刷脏页：sync
+刷脏页：`sync`
 
-清理page cache：echo 1>/proc/sys/vm/drop_caches;
+清理page cache：`echo 1>/proc/sys/vm/drop_caches`
 
 ### 总结
-- c++开发必须掌握智能指针
-- 熟练使用valgrind分析内存泄露
-- 了解多线程内存库jemalloc/tcmalloc，可以熟悉一下jemalloc源代码
+- c++ 开发必须掌握智能指针
+- 熟练使用 valgrind 分析内存泄露
+- 了解多线程内存库 jemalloc / tcmalloc，可以熟悉一下 jemalloc 源代码
 - 会分析free的结果
 - 建议关闭swap
-- 熟悉/proc/sys/vm下的参数，比如刷脏页的频率，脏页占有量，swappinness等
+- 熟悉 `/proc/sys/vm` 下的参数，比如刷脏页的频率，脏页占有量， swappinness 等
 
 
 ## IO 问题诊断与调优 
@@ -243,11 +243,11 @@ Swap:            0B          0B          0B
 **<center>Linux IO 模型</center>**
 
 ### 重要概念
-- 顺序IO：顺序读写文件，是性能最好的读写模式，一般适用于日志类场景
-- 随机IO：随机读写，机械硬盘性能很差，这种场景建议使用SSD，应用层尽量将随机IO改成顺序IO
-- fsync刷盘：为了数据安全，每次完成通过fsync做强制刷盘操作，避免机器宕机丢失数据，但这个操作对吞吐和响应延迟影响比较大，一般会采用批量合并fsync来优化
-- direct IO：绕过page cache，直接对设备进行读写，性能不如page cache，适用于业务层做个cache的场景，比如数据库
-- aio：异步io，读写操作异步化，一般也direct IO，编程复杂，对于大部分应用不要采用，适用于数据库场景
+- 顺序 IO：顺序读写文件，是性能最好的读写模式，一般适用于日志类场景
+- 随机 IO：随机读写，机械硬盘性能很差，这种场景建议使用SSD，应用层尽量将随机IO改成顺序IO
+- fsync 刷盘：为了数据安全，每次完成通过 fsync 做强制刷盘操作，避免机器宕机丢失数据，但这个操作对吞吐和响应延迟影响比较大，一般会采用批量合并fsync来优化
+- direct IO：绕过 page cache ，直接对设备进行读写，性能不如 page cache，适用于业务层做个 cache 的场景，比如数据库
+- aio ：异步 io，读写操作异步化，一般也 direct IO，编程复杂，对于大部分应用不要采用，适用于数据库场景
 
 ### 测试磁盘IO性能 - dd
 - 测试写，direct & sync 顺序写
@@ -332,42 +332,42 @@ scd0              0.00     0.00    0.00    0.00     0.00     0.00     7.27     0
 - svctm 每次IO平均处理时间，单位为毫秒
 - %util 设备IO利用率，超过60%表示已经比较繁忙了，100%就饱和了
 
-### IO问题分析 - 观测进程IO 和 句柄 iotop
-- iotop 观察各个进程的IO消耗情况
-- ls /proc/[pid]/fd -l 查看进程句柄情况
-- lsof -p [pid] 查看进程句柄的情况
+### IO问题分析 - 观测进程 IO 和 句柄 iotop
+- `iotop` 观察各个进程的 IO 消耗情况
+- `ls /proc/[pid]/fd -l` 查看进程句柄情况
+- `lsof -p [pid]` 查看进程句柄的情况
 
 ### 总结
-- IO执行栈
-- IO相关的重要概念，如顺序IO，随机IO，同步，异步等
-- 使用dd和fio测试IO的性能
-- iostat输出结果会解读
-- iotop观察具体进程IO的消耗情况
-- 通过proc文件系统和lsof分析句柄的使用，定位是否有句柄泄露，某个句柄具体对应哪个文件
+- IO 执行栈
+- IO 相关的重要概念，如顺序 IO ，随机 IO ，同步，异步等
+- 使用 dd 和 fio 测试 IO 的性能
+- iostat 输出结果会解读
+- iotop 观察具体进程 IO 的消耗情况
+- 通过 proc 文件系统和 lsof 分析句柄的使用，定位是否有句柄泄露，某个句柄具体对应哪个文件
 
 ## 网络问题诊断与调优
-- netstat -apn | grep [pid] 查看机器网络连接信息
-- lsof -i :[port] 查看开了这个端口的进程
-- sar -n DEV -n EDEV 1 查看网卡流量和包量
+- `netstat -apn | grep [pid]` 查看机器网络连接信息
+- `lsof -i :[port]` 查看开了这个端口的进程
+- `sar -n DEV -n EDEV 1` 查看网卡流量和包量
   - IFACE 网卡设备名字
   - rxpck/s 每秒收到包的数量
   - Txpck/s 每秒发包的数量
   - rxkB/s 每秒收到了多少kB的包
   - txkB/s 每秒发送了多少kB的包
-- tcpdump -AAXn -s1000 -iany port 4100 抓包
-  - tcpdump -AAXn -s1000 -iany port 4100 -w tcp.data tcpdump输出到文件通过wireshark进行分析
+- `tcpdump -AAXn -s1000 -iany port 4100` 抓包
+  - `tcpdump -AAXn -s1000 -iany port 4100 -w tcp.data` tcpdump输出到文件通过 wireshark 进行分析
 
 ### 总结
-- 通过netstat查看网络连接状况
-- lsof分析具体端口被谁占用
-- 通过sar查看网卡流量
-- 熟练掌握tcpdump & wireshark 进行网络包的分析
+- 通过 netstat 查看网络连接状况
+- lsof 分析具体端口被谁占用
+- 通过 sar 查看网卡流量
+- 熟练掌握 tcpdump & wireshark 进行网络包的分析
 
 ## 其他
 
 ### CPU，内存，IO，网络综合展示工具 dstat
-- dstat -t -a --proc-count -i -l -m -p --aio --disk-util 10
-- dstat -t --disk-util -s --fs --socket --tcp --udp --top-bio --top-cpu 10
+- `dstat -t -a --proc-count -i -l -m -p --aio --disk-util 10`
+- `dstat -t --disk-util -s --fs --socket --tcp --udp --top-bio --top-cpu 10`
 
 ### 综合系统运行信息 - sar
 - sar命令负责收集汇报存储系统运行信息
