@@ -14,7 +14,7 @@ mathjax: true
 
 # CAP
 所谓 CAP 定律，即一个分布式系统无法同时满足以下三种性质
-![](../assets/nosql-triangle.png)
+![](/assets/nosql-triangle.png)
 
 ## Consistency 强一致性
 对一个分布式系统中的所有机器来说，一个数据的值，是一致的，不会出现 A 机器读到这个数据是10，B机器读到这个数据是11 这种情况，这就是强一致性
