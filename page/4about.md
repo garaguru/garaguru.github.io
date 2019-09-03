@@ -18,6 +18,5 @@ type: page
 
 Email: xinggwang@gmail.com
 
-
-<h2></h2>
+<br>
 {% include comments.html %}
