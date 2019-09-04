@@ -4,7 +4,7 @@ title: .o .a .so 文件详解
 excerpt: 本文讲解 g++ 中的静态链接库和动态链接库的使用方式
 date: 2018-10-04 01:08:38
 categories: 编译原理
-tags: 编译原理 GCC C++
+tags: 编译原理 C/C++
 author: Garaguru
 mathjax: true
 ---
