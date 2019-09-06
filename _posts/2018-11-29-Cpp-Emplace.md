@@ -4,7 +4,7 @@ title: C++ 中 emplace 的特点
 excerpt: 本文介绍 emplace emplace_back 等操作在 C++ 中的用处
 date: 2018-11-29 13:24:33
 categories: C/C++
-tags: C/C++
+tags: C/C++ C++11
 author: Garaguru
 mathjax: true
 ---

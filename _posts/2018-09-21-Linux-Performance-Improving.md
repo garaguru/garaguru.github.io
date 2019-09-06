@@ -7,6 +7,7 @@ categories: Linux
 tags: Linux 
 author: Garaguru
 mathjax: true
+number: true
 ---
 
 * content
@@ -138,7 +139,7 @@ strace -e brk,mmap -f -p [pid]
     ```
 - perf report 输出热点函数信息图
 
-#### 精准到函数的性能分析 - 火焰图
+### 精准到函数的性能分析 - 火焰图
 根据perf的输出，使用火焰图来进行性能分析
 ![firegraph](/assets/firegraph.jpg)
 **<center>火焰图</center>**
