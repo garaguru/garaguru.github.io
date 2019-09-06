@@ -7,6 +7,7 @@ categories: C/C++
 tags: C/C++ 汇编
 author: Garaguru
 mathjax: true
+number: false
 ---
 
 * content
